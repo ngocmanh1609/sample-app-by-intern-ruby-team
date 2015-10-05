@@ -1,4 +1,4 @@
-== README
+# README
 
 This is the sample app made by Internship Ruby Team. The sample app is the simple web application.
 
