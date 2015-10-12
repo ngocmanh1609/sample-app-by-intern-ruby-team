@@ -18,4 +18,3 @@ Gemfile.lock
 /tmp
 # Ignore Spring files.
 /spring/*.pid
-
