@@ -1,0 +1,14 @@
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'test/fixtures/**/*'
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'log/**/*'
+    - 'public/**/*'
+    - 'tmp/**/*'
+
+Style/Encoding:
+  Enabled: true
