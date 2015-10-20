@@ -9,4 +9,4 @@ machine:
 test:
   post:
     - bundle exec rake test
-    - rubocop
+    - bundle exec rubocop
