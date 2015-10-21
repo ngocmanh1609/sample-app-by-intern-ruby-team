@@ -9,6 +9,9 @@ AllCops:
     - 'log/**/*'
     - 'public/**/*'
     - 'tmp/**/*'
+    - 'config/**/*'
+    - 'Guardfile'
+    - 'config.ru'
 
 Style/Encoding:
   Enabled: true

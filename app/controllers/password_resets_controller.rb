@@ -1,7 +1,7 @@
 # encoding: utf-8
 # Password Reset Controller
 class PasswordResetsController < ApplicationController
-  before_action :get_user,   only: [:edit, :update]
+  before_action :find_user, only: [:edit, :update]
   before_action :valid_user, only: [:edit, :update]
   before_action :check_expiration, only: [:edit, :update]
 
@@ -13,8 +13,7 @@ class PasswordResetsController < ApplicationController
     if @user
       @user.create_reset_digest
       @user.send_password_reset_email
-      flash[:info] = 'Email sent with password reset instructions'
-      redirect_to root_url
+      send_email
     else
       flash.now[:danger] = 'Email address not found'
       render 'new'
@@ -44,23 +43,26 @@ class PasswordResetsController < ApplicationController
   end
 
   # Before filters
-  def get_user
+  def find_user
     @user = User.find_by(email: params[:email])
   end
 
   # Confirms a valid user.
   def valid_user
-    unless (@user && @user.activated? &&
-            @user.authenticated?(:reset, params[:id]))
-      redirect_to root_url
-    end
+    return if @user && @user.activated? &&
+              @user.authenticated?(:reset, params[:id])
+    redirect_to root_url
   end
 
   # Checks expiration of reset token.
   def check_expiration
-    if @user.password_reset_expired?
-      flash[:danger] = 'Password reset has expired.'
-      redirect_to new_password_reset_url
-    end
+    return unless @user.password_reset_expired?
+    flash[:danger] = 'Password reset has expired.'
+    redirect_to new_password_reset_url
+  end
+
+  def send_email
+    flash[:info] = 'Email sent with password reset instructions'
+    redirect_to root_url
   end
 end

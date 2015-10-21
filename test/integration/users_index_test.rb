@@ -1,7 +1,7 @@
+# encoding: utf-8
 require 'test_helper'
-
+# User Index test
 class UsersIndexTest < ActionDispatch::IntegrationTest
-
   def setup
     @admin     = users(:michael)
     @non_admin = users(:archer)

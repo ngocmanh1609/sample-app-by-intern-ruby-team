@@ -1,5 +1,5 @@
 # encoding: utf-8
-# User class
+# User model
 class User < ActiveRecord::Base
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
@@ -14,8 +14,11 @@ class User < ActiveRecord::Base
 
   # Returns the hash digest of the given string.
   def self.digest(string)
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : 
-                                                  BCrypt::Engine.cost
+    if ActiveModel::SecurePassword.min_cost
+      cost = BCrypt::Engine::MIN_COST
+    else
+      cost = BCrypt::Engine.cost
+    end
     BCrypt::Password.create(string, cost: cost)
   end
 
