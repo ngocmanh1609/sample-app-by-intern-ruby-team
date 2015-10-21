@@ -1,7 +1,7 @@
+# encoding: utf-8
 require 'test_helper'
-
+# User edit test
 class UsersEditTest < ActionDispatch::IntegrationTest
-
   def setup
     @user = users(:michael)
   end

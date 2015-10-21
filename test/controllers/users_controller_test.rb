@@ -1,7 +1,7 @@
+# encoding: utf-8
 require 'test_helper'
-
+# User controller test
 class UsersControllerTest < ActionController::TestCase
-
   def setup
     @user = users(:michael)
     @other_user = users(:archer)
@@ -57,5 +57,4 @@ class UsersControllerTest < ActionController::TestCase
     end
     assert_redirected_to root_url
   end
-
 end

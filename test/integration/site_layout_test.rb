@@ -1,7 +1,7 @@
+# encoding: utf-8
 require 'test_helper'
-
+# Site layout test
 class SiteLayoutTest < ActionDispatch::IntegrationTest
-
   test 'layout links' do
     get root_path
     assert_template 'static_pages/home'
