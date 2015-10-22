@@ -63,3 +63,6 @@ bower.json
 
 # sftp configuration file
 sftp-config.json
+
+# Ignore uploaded test images.
+/public/uploads
