@@ -1,3 +1,5 @@
+# encoding: utf-8
+# Relationships controller
 class RelationshipsController < ApplicationController
   before_action :logged_in_user
 
