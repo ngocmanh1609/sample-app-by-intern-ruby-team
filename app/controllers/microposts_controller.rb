@@ -3,8 +3,21 @@
 class MicropostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user,   only: :destroy
+  def index
+    @microposts = current_user.microposts.hash_tree
+  end
+
+  def new
+    @micropost = current_user.microposts.build(parent_id: params[:parent_id])
+  end
+
   def create
-    @micropost = current_user.microposts.build(micropost_params)
+    if params[:micropost][:parent_id].to_i > 0
+      parent = current_user.microposts.find_by_id(params[:micropost].delete(:parent_id))
+      @micropost = parent.children.build(micropost_params)
+    else
+      @micropost = current_user.microposts.build(micropost_params)
+    end
     if @micropost.save
       flash[:success] = 'Micropost created!'
       redirect_to root_url

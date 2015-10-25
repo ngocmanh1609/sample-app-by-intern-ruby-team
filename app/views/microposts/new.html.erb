@@ -1,0 +1,7 @@
+<h1>New comment</h1>
+
+<% if @micropost.parent %>
+  <%= render 'micropost', micropost: @micropost.parent, from_reply_form: true %>
+<% end %>
+
+<%= render 'shared/micropost_form' %>

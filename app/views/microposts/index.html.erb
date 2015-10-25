@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1>Micropost</h1>
+    <p>
+      <%= link_to 'Add new comment', new_micropost_path, class: 'btn btn-primary btn-lg' %>
+    </p>
+  </div>
+</div>
+
+<%= microposts_tree_for @microposts %>

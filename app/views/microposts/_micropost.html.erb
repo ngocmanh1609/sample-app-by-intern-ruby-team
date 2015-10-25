@@ -12,4 +12,8 @@
                                        data: { confirm: "You sure?" } %>
     <% end %>
   </span>
+  <% from_reply_form ||= nil %>
+  <% unless from_reply_form %>
+  <p><%= link_to 'reply', new_micropost_path(micropost.id) %></p>
+  <% end %>
 </li>
