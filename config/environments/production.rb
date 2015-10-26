@@ -20,21 +20,6 @@ Rails.application.configure do
   # NGINX, varnish or squid.
   # config.action_dispatch.rack_cache = true
 
-  config.app_domain = 'localhost:3000'
-  # Email
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_url_options = { host: config.app_domain }
-  config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com', 
-    port: '587',
-    enable_starttls_auto: true,
-    user_name: 'ngocmanh16094@gmail.com',
-    password: 'manh1234',
-    authentication: :plain,
-    domain: 'localhost:3000'
-  }
-
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
