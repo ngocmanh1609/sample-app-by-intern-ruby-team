@@ -27,11 +27,11 @@ You can see app demo on [heroku]
 #### Contributing
 ----
 If you would like to improve this project, please do step by step below:
-1. [Get this link]
-2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -am 'Add some feature')
-4. Push to the branch (git push origin my-new-feature)
-5. Create a new Pull Request
+* [Get this link]
+* Create your feature branch (git checkout -b my-new-feature)
+* Commit your changes (git commit -am 'Add some feature')
+* Push to the branch (git push origin my-new-feature)
+* Create a new Pull Request
 
 
 **Internship Ruby Team: Tran Cong Ngoc Manh, Le Song Hung, Nguyen Le Khang**
