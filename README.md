@@ -22,12 +22,12 @@ The following is the features of sample app:
 
 * Comment function (processing)
 
-You can see app demo on [heroku]: <https://sample-social-networking-app.herokuapp.com>.
+You can see app demo on [heroku]
 
 #### Contributing
 ----
 If you would like to improve this project, please do step by step below:
-1. [Get this link]: <https://github.com/ngocmanh1609/sample-app-by-intern-ruby-team>
+1. [Get this link]
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
@@ -35,3 +35,7 @@ If you would like to improve this project, please do step by step below:
 
 
 **Internship Ruby Team: Tran Cong Ngoc Manh, Le Song Hung, Nguyen Le Khang**
+
+
+[heroku]: <https://sample-social-networking-app.herokuapp.com>
+[Get this link]: <https://github.com/ngocmanh1609/sample-app-by-intern-ruby-team>
